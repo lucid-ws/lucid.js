@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">node-server/server/Server.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/lucid-ws/lucid.js" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Errors">Errors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ProtocolVersion">ProtocolVersion</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SERVER_ACTIVE_ERROR">SERVER_ACTIVE_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ServerDefaultOptions">ServerDefaultOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ServerStatus">ServerStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">server</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-server/server/ExpressServer.js~LucidExpressServer.html">LucidExpressServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-server/server/Server.js~LucidServer.html">LucidServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExpressServerOptions">ExpressServerOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ServerOptions">ServerOptions</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">node-server/server/Server.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+
+/**
+* Object containing the options for the Server
+* @typedef {(object)} ServerOptions
+* @property {Number} [port=25544] The port that the WebSocket and HTTP server should run on.
+* @property {ExpressServerOptions} [express] Options for the Express (REST API) Server.
+* @example
+* {
+*   wss: {},
+*   express: {},
+*   port: 25544
+* }
+*/
+
+import EventEmitter from &apos;events&apos;;
+import ExpressServer from &apos;./ExpressServer&apos;;
+import * as Util from &apos;../Util&apos;;
+import * as Constants from &apos;../Constants&apos;;
+
+/**
+* Manages the Express (HTTP), WebSocket Server and connections
+* @example
+* // ES6
+* import Server from &apos;lucid&apos;;
+* let server = new Server({
+*   port: 25544
+* });
+*
+* // CommonJS
+* var Lucid = require(&quot;lucid&quot;);
+* var server = new Lucid.Server({
+*   port: 25544
+* });
+*/
+class LucidServer extends EventEmitter{
+
+  /**
+  * Creates a new LucidServer class.
+  * @param  {ServerOptions} [options] Options to pass to the object.
+  * @example
+  * import Server from &apos;lucid&apos;;
+  * var server = new Server({
+  *   port: 25544
+  * });
+  *
+  * // CommonJS
+  * var Lucid = require(&quot;lucid&quot;);
+  * var server = new Lucid.Server({
+  *   port: 25544
+  * });
+  */
+  constructor(options) {
+    super();
+    /**
+    * The options passed to the Server upon instantiation.
+    * @type {ServerOptions}
+    */
+    this.options = Util.Options(ServerConstants.ServerDefaultOptions, options);
+
+    /**
+     * The status of the server
+     * @type {ServerStatus}
+     * @example
+     * import ServerConstants from &apos;lucid&apos;
+     * var available = (server.status === ServerConstants.Status.AVAILABLE);
+     */
+    this.status = ServerConstants.ServerStatus.UNAVAILABLE;
+
+    if (this.options.autoStart) {
+      this._setup();
+    }
+  }
+
+  /**
+   * Tries to start the server
+   * @throws {SERVER_ACTIVE_ERROR} error when
+   */
+  start() {
+
+  }
+
+  /**
+   * Sets up the Client&apos;s Express and WebSocket Servers.
+   * @private
+   */
+  _setup() {
+    this.status = ServerConstants.ServerStatus.STARTING;
+
+    /**
+     * The ExpressServer of the server - handles HTTP requests
+     * @type {ExpressServer}
+     * @private
+     */
+    this._expressServer = new ExpressServer(this);
+  }
+
+};
+
+export default LucidServer;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,3037 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/constants/Constants.js",
+    "memberof": null,
+    "longname": "server/constants/Constants.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import * as PacketConstants from './packets/Packets';\nimport * as ErrorConstants from './errors/Errors';\n\n/**\n * The Lucid Protocol version that the server and client are running.\n * @type {String}\n */\nexport const ProtocolVersion = 'alpha-experimental-1';\n\n/**\n * Describes the state of the Server.\n * @type {Object}\n * @property {Number} AVAILABLE Shows that the server is ready/available.\n * @property {Number} UNAVAILABLE Shows that the server is unavailable and is not attempting to start/restart.\n * @property {Number} RESTARTING Shows that the server is unavailable but is trying to restart.\n * @property {Number} STARTING Shows that the server is starting up for the first time.\n */\nexport const ServerStatus = {\n  AVAILABLE: 0,\n  UNAVAILABLE: 1,\n  RESTARTING: 2,\n  STARTING: 3,\n};\n\n/**\n * Describes the state of a Client.\n * @type {Object}\n * @property {Number} ACTIVE Shows that the Client is active - it is connected.\n * @property {Number} INACTIVE Shows that the Client is inactive - it is disconnected, but has the chance\n * to renew its session. Clients may be inactive when their connection has dropped.\n * @property {Number} REMOVED Shows that the Client is disconnected and they are not permitted to return to their\n * session.\n * @property {Number} UNAUTHORIZED Shows that the Client is unauthorized. Only applies to UnknownClient.\n */\nexport const ClientStatus = {\n  ACTIVE: 0,\n  INACTIVE: 1,\n  REMOVED: 2,\n  UNAUTHORIZED: 3,\n};\n\n/**\n * Default options for a Server's setup.\n * @type {ServerOptions}\n */\nexport const ServerDefaultOptions = {\n  wss: {\n    allowedAuthTime: 1000,\n  },\n  express: {},\n  mount: '/',\n  maxClients: 25,\n};\n\n/*\n\n PACKETS\n\n */\n/**\n * Object containing Packet Types\n * @type {Object}\n */\nexport const PacketTypes = PacketConstants.PacketType;\n\n/**\n * Object containing Disconnect Packet Types\n * @type {Object}\n */\nexport const DisconnectTypes = PacketConstants.DisconnectPacketType;\n\n/*\n\n ERRORS\n\n */\n/**\n * Object containing Error Types\n * @type {Object}\n */\nexport const Errors = ErrorConstants.Errors;\n"
+  },
+  {
+    "__docId__": 1,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "ProtocolVersion",
+    "memberof": "server/constants/Constants.js",
+    "longname": "server/constants/Constants.js~ProtocolVersion",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/Constants.js",
+    "importStyle": "{ProtocolVersion}",
+    "description": "The Lucid Protocol version that the server and client are running.",
+    "lineNumber": 8,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 2,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "ServerStatus",
+    "memberof": "server/constants/Constants.js",
+    "longname": "server/constants/Constants.js~ServerStatus",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/Constants.js",
+    "importStyle": "{ServerStatus}",
+    "description": "Describes the state of the Server.",
+    "lineNumber": 18,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "AVAILABLE",
+        "description": "Shows that the server is ready/available."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "UNAVAILABLE",
+        "description": "Shows that the server is unavailable and is not attempting to start/restart."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "RESTARTING",
+        "description": "Shows that the server is unavailable but is trying to restart."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "STARTING",
+        "description": "Shows that the server is starting up for the first time."
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 3,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "ClientStatus",
+    "memberof": "server/constants/Constants.js",
+    "longname": "server/constants/Constants.js~ClientStatus",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/Constants.js",
+    "importStyle": "{ClientStatus}",
+    "description": "Describes the state of a Client.",
+    "lineNumber": 35,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ACTIVE",
+        "description": "Shows that the Client is active - it is connected."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "INACTIVE",
+        "description": "Shows that the Client is inactive - it is disconnected, but has the chance\nto renew its session. Clients may be inactive when their connection has dropped."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "REMOVED",
+        "description": "Shows that the Client is disconnected and they are not permitted to return to their\nsession."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "UNAUTHORIZED",
+        "description": "Shows that the Client is unauthorized. Only applies to UnknownClient."
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "ServerDefaultOptions",
+    "memberof": "server/constants/Constants.js",
+    "longname": "server/constants/Constants.js~ServerDefaultOptions",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/Constants.js",
+    "importStyle": "{ServerDefaultOptions}",
+    "description": "Default options for a Server's setup.",
+    "lineNumber": 46,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ServerOptions"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PacketTypes",
+    "memberof": "server/constants/Constants.js",
+    "longname": "server/constants/Constants.js~PacketTypes",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/Constants.js",
+    "importStyle": "{PacketTypes}",
+    "description": "Object containing Packet Types",
+    "lineNumber": 64,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "DisconnectTypes",
+    "memberof": "server/constants/Constants.js",
+    "longname": "server/constants/Constants.js~DisconnectTypes",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/Constants.js",
+    "importStyle": "{DisconnectTypes}",
+    "description": "Object containing Disconnect Packet Types",
+    "lineNumber": 70,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "Errors",
+    "memberof": "server/constants/Constants.js",
+    "longname": "server/constants/Constants.js~Errors",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/Constants.js",
+    "importStyle": "{Errors}",
+    "description": "Object containing Error Types",
+    "lineNumber": 81,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/constants/errors/Errors.js",
+    "memberof": null,
+    "longname": "server/constants/errors/Errors.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "content": "/**\n * Thrown when the client send an incorrect message i.e. bad compression or bad json\n * @type {Error}\n */\nconst INVALID_MESSAGE_FROM_CLIENT = new Error(\n  'The received message was of an invalid format i.e. bad compression or json');\n\n/**\n * Object containing custom errors\n * @type {Object}\n * @ignore\n */\nexport const Errors = {\n  INVALID_MESSAGE_FROM_CLIENT,\n};\n"
+  },
+  {
+    "__docId__": 9,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "INVALID_MESSAGE_FROM_CLIENT",
+    "memberof": "server/constants/errors/Errors.js",
+    "longname": "server/constants/errors/Errors.js~INVALID_MESSAGE_FROM_CLIENT",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/constants/errors/Errors.js",
+    "importStyle": null,
+    "description": "Thrown when the client send an incorrect message i.e. bad compression or bad json",
+    "lineNumber": 5,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Error"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "Errors",
+    "memberof": "server/constants/errors/Errors.js",
+    "longname": "server/constants/errors/Errors.js~Errors",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/errors/Errors.js",
+    "importStyle": "{Errors}",
+    "description": "Object containing custom errors",
+    "lineNumber": 13,
+    "ignore": true,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/constants/packets/Packets.js",
+    "memberof": null,
+    "longname": "server/constants/packets/Packets.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "content": "/**\n * Describes a Client requesting a new session.\n * @type {Number}\n */\nconst CLIENT_NEW_SESSION_REQUEST = 1;\n\n/**\n * Describes a Client requesting to return to an existing session.\n * @type {Number}\n */\nconst CLIENT_EXISTING_SESSION_REQUEST = 2;\n\n/**\n * Describes when the server is going to disconnect a client.\n * @type {Number}\n */\nconst SERVER_DISCONNECTING_CLIENT = 3;\n\n/**\n * Describes when a Server accepts a new/existing session request.\n * @type {Number}\n */\nconst SERVER_ACCEPT_SESSION_REQUEST = 4;\n\n/**\n * @ignore\n */\nexport const PacketType = {\n  CLIENT_NEW_SESSION_REQUEST,\n  CLIENT_EXISTING_SESSION_REQUEST,\n  SERVER_DISCONNECTING_CLIENT,\n  SERVER_ACCEPT_SESSION_REQUEST,\n};\n\n/*\n  DISCONNECT TYPES\n*/\n\n/**\n * DisconnectType - Describes when the Server is disconnecting/refusing the client as it is running at maximum capacity.\n * @type {Number}\n */\nconst SERVER_AT_MAXIMUM_CAPACITY = 1;\n\n/**\n * DisconnectType - Describes when a Client opens a connection to the server, but takes too long to send an\n * authentication packet.\n * @type {Number}\n */\nconst TOOK_TOO_LONG_TO_AUTH = 2;\n\n/**\n * @ignore\n */\nexport const DisconnectPacketType = {\n  SERVER_AT_MAXIMUM_CAPACITY,\n  TOOK_TOO_LONG_TO_AUTH,\n};\n"
+  },
+  {
+    "__docId__": 12,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "CLIENT_NEW_SESSION_REQUEST",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~CLIENT_NEW_SESSION_REQUEST",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": null,
+    "description": "Describes a Client requesting a new session.",
+    "lineNumber": 5,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "CLIENT_EXISTING_SESSION_REQUEST",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~CLIENT_EXISTING_SESSION_REQUEST",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": null,
+    "description": "Describes a Client requesting to return to an existing session.",
+    "lineNumber": 11,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "SERVER_DISCONNECTING_CLIENT",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~SERVER_DISCONNECTING_CLIENT",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": null,
+    "description": "Describes when the server is going to disconnect a client.",
+    "lineNumber": 17,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 15,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "SERVER_ACCEPT_SESSION_REQUEST",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~SERVER_ACCEPT_SESSION_REQUEST",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": null,
+    "description": "Describes when a Server accepts a new/existing session request.",
+    "lineNumber": 23,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 16,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "PacketType",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~PacketType",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": "{PacketType}",
+    "description": "",
+    "lineNumber": 28,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 17,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "SERVER_AT_MAXIMUM_CAPACITY",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~SERVER_AT_MAXIMUM_CAPACITY",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": null,
+    "description": "DisconnectType - Describes when the Server is disconnecting/refusing the client as it is running at maximum capacity.",
+    "lineNumber": 43,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 18,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "TOOK_TOO_LONG_TO_AUTH",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~TOOK_TOO_LONG_TO_AUTH",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": null,
+    "description": "DisconnectType - Describes when a Client opens a connection to the server, but takes too long to send an\nauthentication packet.",
+    "lineNumber": 50,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 19,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "DisconnectPacketType",
+    "memberof": "server/constants/packets/Packets.js",
+    "longname": "server/constants/packets/Packets.js~DisconnectPacketType",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/constants/packets/Packets.js",
+    "importStyle": "{DisconnectPacketType}",
+    "description": "",
+    "lineNumber": 55,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 20,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/index.js",
+    "memberof": null,
+    "longname": "server/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\n/* server */\nimport LucidServer from './server/Server';\nimport LucidExpressServer from './server/ExpressServer';\n\n/* utils */\nimport * as Util from './util/Util';\nimport * as Constants from './constants/Constants';\n\nexport {\n  LucidServer,\n  LucidExpressServer,\n  Constants,\n  Util\n};\n"
+  },
+  {
+    "__docId__": 21,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/server/ExpressServer.js",
+    "memberof": null,
+    "longname": "server/server/ExpressServer.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\n/**\n* Object containing options for ExpressServer\n* @typedef {(object)} ExpressServerOptions\n*/\n\nimport http from 'http';\nimport express from 'express';\nimport cors from 'cors';\nimport bodyParser from 'body-parser';\n\n/**\n * The LucidExpressServer handles HTTP REST requests for the Lucid Server, e.g. server metadata.\n */\nclass LucidExpressServer{\n\n  /**\n   * Creates a new ExpressServer. Developers shouldn't instantiate this class themselves, it is done by LucidServer.\n   * @param {LucidServer} lucidServer The Lucid Server that the ExpressServer is serving under.\n   */\n  constructor(lucidServer) {\n    /**\n     * Lucid Server that the ExpressServer is serving under.\n     * @type {LucidServer}\n     */\n    this.lucidServer = lucidServer;\n    /**\n     * Options for the ExpressServer, obtained from the owning Server's options.\n     * @type {ExpressServerOptions}\n     */\n    this.options = lucidServer.options.express;\n\n    /**\n     * The express application that the server is using.\n     * @type {express.Application}\n     */\n    this.app = express();\n\n    /**\n     * Express Router for managing core Lucid requests.\n     * @type {express.Router}\n     */\n    this.metaRouter = express.Router();\n\n    /**\n     * Express Router for managing custom requests.\n     * @type {express.Router}\n     */\n    this.customRouter = express.Router();\n\n    // allow Cross-Origin Resource Sharing (external access to server)\n    this.app.use(cors());\n\n    // the mount point that the express server should build upon\n    let baseMount = this.lucidServer.options.mount;\n\n    this.metaRouter.get('/info', (req, res) => {\n      res.json({});\n    });\n\n    // register handlers\n    this.app.use(baseMount + 'meta', this.metaRouter);\n    this.app.use(baseMount + 'custom', this.customRouter);\n\n    /**\n     * The HTTP server the express application is running on.\n     * @type {http.Server}\n     */\n    this.httpServer = null;\n  }\n\n  /**\n   * Attaches a HTTP server to the Express Server\n   * @param {http.Server} httpServer the server to attach\n   * @private\n   */\n  attach(httpServer) {\n    let app = this.app;\n    this.httpServer = httpServer;\n\n    /*\n      Get the HTTP server to let express handle requests\n     */\n    httpServer.on('request', app);\n  }\n\n};\n\nexport default LucidExpressServer;\n"
+  },
+  {
+    "__docId__": 22,
+    "kind": "typedef",
+    "static": true,
+    "variation": null,
+    "name": "ExpressServerOptions",
+    "memberof": "server/server/ExpressServer.js",
+    "longname": "server/server/ExpressServer.js~ExpressServerOptions",
+    "access": null,
+    "description": "Object containing options for ExpressServer",
+    "lineNumber": 8,
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "ExpressServerOptions"
+    }
+  },
+  {
+    "__docId__": 23,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "LucidExpressServer",
+    "memberof": "server/server/ExpressServer.js",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/server/ExpressServer.js",
+    "importStyle": "LucidExpressServer",
+    "description": "The LucidExpressServer handles HTTP REST requests for the Lucid Server, e.g. server metadata.",
+    "lineNumber": 16,
+    "interface": false
+  },
+  {
+    "__docId__": 24,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#constructor",
+    "access": null,
+    "description": "Creates a new ExpressServer. Developers shouldn't instantiate this class themselves, it is done by LucidServer.",
+    "lineNumber": 22,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "LucidServer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "lucidServer",
+        "description": "The Lucid Server that the ExpressServer is serving under."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 25,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "lucidServer",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#lucidServer",
+    "access": null,
+    "description": "Lucid Server that the ExpressServer is serving under.",
+    "lineNumber": 27,
+    "type": {
+      "nullable": null,
+      "types": [
+        "LucidServer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "options",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#options",
+    "access": null,
+    "description": "Options for the ExpressServer, obtained from the owning Server's options.",
+    "lineNumber": 32,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ExpressServerOptions"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 27,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "app",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#app",
+    "access": null,
+    "description": "The express application that the server is using.",
+    "lineNumber": 38,
+    "type": {
+      "nullable": null,
+      "types": [
+        "express.Application"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "metaRouter",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#metaRouter",
+    "access": null,
+    "description": "Express Router for managing core Lucid requests.",
+    "lineNumber": 44,
+    "type": {
+      "nullable": null,
+      "types": [
+        "express.Router"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 29,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "customRouter",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#customRouter",
+    "access": null,
+    "description": "Express Router for managing custom requests.",
+    "lineNumber": 50,
+    "type": {
+      "nullable": null,
+      "types": [
+        "express.Router"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 30,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "httpServer",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#httpServer",
+    "access": null,
+    "description": "The HTTP server the express application is running on.",
+    "lineNumber": 70,
+    "type": {
+      "nullable": null,
+      "types": [
+        "http.Server"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 31,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "attach",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#attach",
+    "access": "private",
+    "description": "Attaches a HTTP server to the Express Server",
+    "lineNumber": 78,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "http.Server"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "httpServer",
+        "description": "the server to attach"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 32,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "httpServer",
+    "memberof": "server/server/ExpressServer.js~LucidExpressServer",
+    "longname": "server/server/ExpressServer.js~LucidExpressServer#httpServer",
+    "access": null,
+    "description": null,
+    "lineNumber": 80,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 33,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/server/Server.js",
+    "memberof": null,
+    "longname": "server/server/Server.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\n/**\n* Object containing the options for the Server\n* @typedef {(object)} ServerOptions\n* @property {ExpressServerOptions} [express] Options for the Express (REST API) Server.\n* @property {WebSocketServerOptions} [wss] Options for the WebSocket Server.\n* @property {String} [mount=/] Path to mount the LucidServer on, defaults to `/` (root)\n* @property {Number} [maxClients=25] Maximum amount of clients the server should handle\n*/\n\nimport EventEmitter from 'events';\nimport ExpressServer from './ExpressServer';\nimport WebSocketServer from './WebSocketServer';\nimport * as Util from '../util/Util';\nimport * as Constants from '../constants/Constants';\n\n/**\n* Manages the Express (HTTP), WebSocket Server and connections\n*/\nclass LucidServer extends EventEmitter{\n\n  /**\n  * Creates a new LucidServer class.\n  * @param  {ServerOptions} [options] Options to pass to the object.\n  */\n  constructor(options) {\n    super();\n    /**\n    * The options passed to the Server upon instantiation.\n    * @type {ServerOptions}\n    */\n    this.options = Util.Options(Constants.ServerDefaultOptions, options);\n\n    /**\n     * The status of the server\n     * @type {ServerStatus}\n     */\n    this.status = Constants.ServerStatus.UNAVAILABLE;\n\n    /**\n     * The Express Server of the Client\n     * @type {LucidExpressServer}\n     */\n    this.express = new ExpressServer(this);\n\n    /**\n     * The WebSocket Server of the Client\n     * @type {LucidWebSocketServer}\n     */\n    this.wss = new WebSocketServer(this);\n  }\n\n  /**\n   * Attaches a HTTP Server to the Express and WebSocket Servers, essentially starting up the LucidServer.\n   * @param  {http.Server} httpServer The HTTP Server to attach\n   */\n  attach(httpServer) {\n    this.express.attach(httpServer);\n    this.wss.attach(httpServer);\n  }\n\n};\n\nexport default LucidServer;\n"
+  },
+  {
+    "__docId__": 34,
+    "kind": "typedef",
+    "static": true,
+    "variation": null,
+    "name": "ServerOptions",
+    "memberof": "server/server/Server.js",
+    "longname": "server/server/Server.js~ServerOptions",
+    "access": null,
+    "description": "Object containing the options for the Server",
+    "lineNumber": 12,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "ExpressServerOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "express",
+        "description": "Options for the Express (REST API) Server."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "WebSocketServerOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "wss",
+        "description": "Options for the WebSocket Server."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "/",
+        "defaultRaw": "/",
+        "name": "mount",
+        "description": "Path to mount the LucidServer on, defaults to `/` (root)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "25",
+        "defaultRaw": 25,
+        "name": "maxClients",
+        "description": "Maximum amount of clients the server should handle"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "ServerOptions"
+    }
+  },
+  {
+    "__docId__": 35,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "LucidServer",
+    "memberof": "server/server/Server.js",
+    "longname": "server/server/Server.js~LucidServer",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/server/Server.js",
+    "importStyle": "LucidServer",
+    "description": "Manages the Express (HTTP), WebSocket Server and connections",
+    "lineNumber": 21,
+    "interface": false,
+    "extends": [
+      "events~EventEmitter"
+    ]
+  },
+  {
+    "__docId__": 36,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "server/server/Server.js~LucidServer",
+    "longname": "server/server/Server.js~LucidServer#constructor",
+    "access": null,
+    "description": "Creates a new LucidServer class.",
+    "lineNumber": 27,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "ServerOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "Options to pass to the object."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 37,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "options",
+    "memberof": "server/server/Server.js~LucidServer",
+    "longname": "server/server/Server.js~LucidServer#options",
+    "access": null,
+    "description": "The options passed to the Server upon instantiation.",
+    "lineNumber": 33,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ServerOptions"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 38,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "status",
+    "memberof": "server/server/Server.js~LucidServer",
+    "longname": "server/server/Server.js~LucidServer#status",
+    "access": null,
+    "description": "The status of the server",
+    "lineNumber": 39,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ServerStatus"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 39,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "express",
+    "memberof": "server/server/Server.js~LucidServer",
+    "longname": "server/server/Server.js~LucidServer#express",
+    "access": null,
+    "description": "The Express Server of the Client",
+    "lineNumber": 45,
+    "type": {
+      "nullable": null,
+      "types": [
+        "LucidExpressServer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 40,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "wss",
+    "memberof": "server/server/Server.js~LucidServer",
+    "longname": "server/server/Server.js~LucidServer#wss",
+    "access": null,
+    "description": "The WebSocket Server of the Client",
+    "lineNumber": 51,
+    "type": {
+      "nullable": null,
+      "types": [
+        "LucidWebSocketServer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 41,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "attach",
+    "memberof": "server/server/Server.js~LucidServer",
+    "longname": "server/server/Server.js~LucidServer#attach",
+    "access": null,
+    "description": "Attaches a HTTP Server to the Express and WebSocket Servers, essentially starting up the LucidServer.",
+    "lineNumber": 58,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "http.Server"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "httpServer",
+        "description": "The HTTP Server to attach"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 42,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/server/WebSocketServer.js",
+    "memberof": null,
+    "longname": "server/server/WebSocketServer.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nimport crypto from 'crypto';\nimport AuthorizedClient from '../structures/AuthorizedClient';\nimport UnknownClient from '../structures/UnknownClient';\nimport * as Constants from '../constants/Constants';\n\n/**\n* Object containing options for LucidWebSocketServer\n* @typedef {(object)} WebSocketServerOptions\n* @property {Number} [hearbeat=45000] Interval of heartbeats in milliseconds. Set to -1 to disable heartbeats.\n* Heartbeats are used to verify whether connections are active.\n* @property {Number} [allowedAuthTime=5000] Maximum time in milliseconds that a client has to request authentication\n* before it is disconnected.\n*/\n\nimport {Server} from 'ws';\n\n/**\n * The WebSocketServer handles WebSocket connections and sessions\n */\nclass LucidWebSocketServer{\n  /**\n   * Creates a new WebSocketServer. Developers shouldn't instantiate this class themselves, it is done by LucidServer.\n   * @param  {LucidServer} lucidServer The LucidServer that the WebSocketServer is running under.\n   */\n  constructor(lucidServer) {\n\n    /**\n     * Lucid Server that the ExpressServer is serving under.\n     * @type {LucidServer}\n     */\n    this.lucidServer = lucidServer;\n    /**\n     * Options for the WebSocketServer, obtained from the owning Server's options.\n     * @type {WebSocketServerOptions}\n     */\n    this.options = lucidServer.options.wss;\n\n    /**\n     * The WebSocket Server that the LucidWebSocketServer class wraps around.\n     * @type {ws.Server}\n     */\n    this.wss = null;\n\n    /**\n     * An Array of Authorized Clients.\n     * @type {Array<AuthorizedClient>}\n     */\n    this.connections = [];\n\n  }\n\n  /**\n   * Attaches a HTTP Server, essentially starting the WebSocket Server.\n   * @param  {http.Server} httpServer The HTTP Server to attach.\n   * @private\n   */\n  attach(httpServer) {\n\n    // the mount point that the WS server should build upon\n    let baseMount = this.lucidServer.options.mount;\n\n    this.wss = new Server({ server: httpServer, path: baseMount + 'ws', });\n\n    this.attachHandlers();\n\n  }\n\n  /**\n   * Describes whether the server has the capacity to take any new connections.\n   * @return {Boolean} Returns true if there is capacity for a new connection.\n   */\n  get canAllowNewConnections() {\n    return this.connections.length < this.lucidServer.options.maxClients;\n  }\n\n  /**\n   * Attach WSS Handlers\n   * @private\n   */\n  attachHandlers() {\n    this.wss.on('connection', (socket) => this.EventConnection(socket));\n    this.wss.on('error', (error) => this.EventError(error));\n    this.wss.on('headers', (headers) => this.EventHeaders(headers));\n  }\n\n  /**\n   * Handles WebSocketServer 'connection' events\n   * @param {ws.WebSocket} socket\n   * @private\n   */\n  EventConnection(socket) {\n    let unknownClient = new UnknownClient(socket, this);\n  }\n\n  /**\n   * Handles WebSocketServer 'error' events\n   * @param {Error} error\n   * @private\n   */\n  EventError(error) {\n\n  }\n\n  /**\n   * Handles WebSocketServer 'headers' events\n   * @param {Object} headers\n   * @private\n   */\n  EventHeaders(headers) {\n\n  }\n\n  /**\n   * Authorizes a previously \"unknown\" client with a new session.\n   * @param {UnknownClient} unknownClient Client to authorize\n   */\n  AuthorizeNewSession(unknownClient) {\n    let uuid = crypto.randomBytes(16).toString('hex');\n    let token = crypto.randomBytes(64).toString('base64');\n\n    unknownClient.breakDown();\n\n    let authorizedClient = new AuthorizedClient(\n      unknownClient.socket, // socket\n      this, // wss\n      uuid, // uuid\n      token // token\n    );\n\n    let packetData = { uuid, token };\n    let heartbeat = this.lucidServer.options.wss.hearbeat;\n\n    if (this.lucidServer.options.hearbeat > -1) {\n      packetData.heartbeatInterval = heartbeat;\n    }\n\n    authorizedClient.sendInternal(Constants.PacketTypes.SERVER_ACCEPT_SESSION_REQUEST, packetData);\n\n    this.connections.push(authorizedClient);\n  }\n};\n\nexport default LucidWebSocketServer;\n"
+  },
+  {
+    "__docId__": 43,
+    "kind": "typedef",
+    "static": true,
+    "variation": null,
+    "name": "WebSocketServerOptions",
+    "memberof": "server/server/WebSocketServer.js",
+    "longname": "server/server/WebSocketServer.js~WebSocketServerOptions",
+    "access": null,
+    "description": "Object containing options for LucidWebSocketServer",
+    "lineNumber": 17,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "45000",
+        "defaultRaw": 45000,
+        "name": "hearbeat",
+        "description": "Interval of heartbeats in milliseconds. Set to -1 to disable heartbeats.\nHeartbeats are used to verify whether connections are active."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "5000",
+        "defaultRaw": 5000,
+        "name": "allowedAuthTime",
+        "description": "Maximum time in milliseconds that a client has to request authentication\nbefore it is disconnected."
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "WebSocketServerOptions"
+    }
+  },
+  {
+    "__docId__": 44,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "LucidWebSocketServer",
+    "memberof": "server/server/WebSocketServer.js",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/server/WebSocketServer.js",
+    "importStyle": "LucidWebSocketServer",
+    "description": "The WebSocketServer handles WebSocket connections and sessions",
+    "lineNumber": 22,
+    "interface": false
+  },
+  {
+    "__docId__": 45,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#constructor",
+    "access": null,
+    "description": "Creates a new WebSocketServer. Developers shouldn't instantiate this class themselves, it is done by LucidServer.",
+    "lineNumber": 27,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "LucidServer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "lucidServer",
+        "description": "The LucidServer that the WebSocketServer is running under."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 46,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "lucidServer",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#lucidServer",
+    "access": null,
+    "description": "Lucid Server that the ExpressServer is serving under.",
+    "lineNumber": 33,
+    "type": {
+      "nullable": null,
+      "types": [
+        "LucidServer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 47,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "options",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#options",
+    "access": null,
+    "description": "Options for the WebSocketServer, obtained from the owning Server's options.",
+    "lineNumber": 38,
+    "type": {
+      "nullable": null,
+      "types": [
+        "WebSocketServerOptions"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 48,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "wss",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#wss",
+    "access": null,
+    "description": "The WebSocket Server that the LucidWebSocketServer class wraps around.",
+    "lineNumber": 44,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ws.Server"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 49,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "connections",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#connections",
+    "access": null,
+    "description": "An Array of Authorized Clients.",
+    "lineNumber": 50,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array<AuthorizedClient>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "attach",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#attach",
+    "access": "private",
+    "description": "Attaches a HTTP Server, essentially starting the WebSocket Server.",
+    "lineNumber": 59,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "http.Server"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "httpServer",
+        "description": "The HTTP Server to attach."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "wss",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#wss",
+    "access": null,
+    "description": null,
+    "lineNumber": 64,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "get",
+    "static": false,
+    "variation": null,
+    "name": "canAllowNewConnections",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#canAllowNewConnections",
+    "access": null,
+    "description": "Describes whether the server has the capacity to take any new connections.",
+    "lineNumber": 74,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Returns true if there is capacity for a new connection."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "attachHandlers",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#attachHandlers",
+    "access": "private",
+    "description": "Attach WSS Handlers",
+    "lineNumber": 82,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "EventConnection",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#EventConnection",
+    "access": "private",
+    "description": "Handles WebSocketServer 'connection' events",
+    "lineNumber": 93,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "ws.WebSocket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": ""
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "EventError",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#EventError",
+    "access": "private",
+    "description": "Handles WebSocketServer 'error' events",
+    "lineNumber": 102,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Error"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": ""
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "EventHeaders",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#EventHeaders",
+    "access": "private",
+    "description": "Handles WebSocketServer 'headers' events",
+    "lineNumber": 111,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "headers",
+        "description": ""
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "AuthorizeNewSession",
+    "memberof": "server/server/WebSocketServer.js~LucidWebSocketServer",
+    "longname": "server/server/WebSocketServer.js~LucidWebSocketServer#AuthorizeNewSession",
+    "access": null,
+    "description": "Authorizes a previously \"unknown\" client with a new session.",
+    "lineNumber": 119,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "UnknownClient"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "unknownClient",
+        "description": "Client to authorize"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 58,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/structures/AuthorizedClient.js",
+    "memberof": null,
+    "longname": "server/structures/AuthorizedClient.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nimport {PacketTypes, DisconnectTypes, ClientStatus} from '../constants/Constants';\nimport Client from './Client';\n\n/**\n * Represents a WebSocket Client that has authorised/authorized themselves.\n */\nclass AuthorizedClient extends Client{\n\n  /**\n   * Creates a new AuthorizedClient. Developers shouldn't instantiate AuthorizedClients,\n   * the WebSocketServer does it automatically.\n   * @param {ws.WebSocket} socket the WebSocket connection\n   * @param {LucidWebSocketServer} wss the WSS the Client is connected to.\n   * @param {String} uuid The UUID of the Client\n   * @param {String} token The private token of the Client\n   */\n  constructor(socket, wss, uuid, token) {\n    super(socket, wss);\n\n    /**\n     * ACTIVE by default because when an AuthorizedClient is first created, it means a WebSocket connection\n     * is active\n     * @ignore\n     */\n    this.status = ClientStatus.ACTIVE;\n\n    /**\n     * @ignore\n     */\n    this.authorized = true;\n\n    /**\n     * The UUID of the Client\n     * @type {String}\n     */\n    this.uuid = uuid;\n\n    /**\n     * The private token of the Client\n     * @type {String}\n     */\n    this.token = token;\n  }\n}\n\nexport default AuthorizedClient;\n"
+  },
+  {
+    "__docId__": 59,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "AuthorizedClient",
+    "memberof": "server/structures/AuthorizedClient.js",
+    "longname": "server/structures/AuthorizedClient.js~AuthorizedClient",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/structures/AuthorizedClient.js",
+    "importStyle": "AuthorizedClient",
+    "description": "Represents a WebSocket Client that has authorised/authorized themselves.",
+    "lineNumber": 9,
+    "interface": false,
+    "extends": [
+      "server/structures/Client.js~Client"
+    ]
+  },
+  {
+    "__docId__": 60,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "server/structures/AuthorizedClient.js~AuthorizedClient",
+    "longname": "server/structures/AuthorizedClient.js~AuthorizedClient#constructor",
+    "access": null,
+    "description": "Creates a new AuthorizedClient. Developers shouldn't instantiate AuthorizedClients,\nthe WebSocketServer does it automatically.",
+    "lineNumber": 19,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "ws.WebSocket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": "the WebSocket connection"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "LucidWebSocketServer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "wss",
+        "description": "the WSS the Client is connected to."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "uuid",
+        "description": "The UUID of the Client"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": "The private token of the Client"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 61,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "status",
+    "memberof": "server/structures/AuthorizedClient.js~AuthorizedClient",
+    "longname": "server/structures/AuthorizedClient.js~AuthorizedClient#status",
+    "access": null,
+    "description": "ACTIVE by default because when an AuthorizedClient is first created, it means a WebSocket connection\nis active",
+    "lineNumber": 27,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "authorized",
+    "memberof": "server/structures/AuthorizedClient.js~AuthorizedClient",
+    "longname": "server/structures/AuthorizedClient.js~AuthorizedClient#authorized",
+    "access": null,
+    "description": "",
+    "lineNumber": 32,
+    "ignore": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "uuid",
+    "memberof": "server/structures/AuthorizedClient.js~AuthorizedClient",
+    "longname": "server/structures/AuthorizedClient.js~AuthorizedClient#uuid",
+    "access": null,
+    "description": "The UUID of the Client",
+    "lineNumber": 38,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "token",
+    "memberof": "server/structures/AuthorizedClient.js~AuthorizedClient",
+    "longname": "server/structures/AuthorizedClient.js~AuthorizedClient#token",
+    "access": null,
+    "description": "The private token of the Client",
+    "lineNumber": 44,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/structures/Client.js",
+    "memberof": null,
+    "longname": "server/structures/Client.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nimport zlib from 'zlib';\nimport * as Constants from '../constants/Constants';\n\n/**\n * Represents a WebSocket Client.\n */\nclass Client{\n\n  /**\n   * Creates a new Client. Developers shouldn't instantiate Client,\n   * the WebSocketServer does it automatically.\n   * @param {ws.WebSocket} socket the WebSocket connection\n   * @param {LucidWebSocketServer} wss the WSS the Client is connected to.\n   */\n  constructor(socket, wss) {\n    /**\n     * The LucidWebSocketServer that the Client is connected to.\n     * @type {LucidWebSocketServer}\n     */\n    this.wss = wss;\n\n    /**\n     * The WebSocket connection of the Client.\n     * @type {ws.WebSocket}\n     */\n    this.socket = socket;\n\n    /**\n     * Represents whether the Client is authorized or not.\n     * @type {Boolean}\n     */\n    this.authorized = false;\n\n    /**\n     * An Array of Intervals. They are stored so they can be cleared if required.\n     * @type {Array<Interval>}\n     */\n    this.intervals = [];\n\n    /**\n     * An Array of Timeouts. They are stored so they can be cleared if required.\n     * @type {Array<Timeout>}\n     */\n    this.timeouts = [];\n\n    /**\n     * The status of the Client.\n     * @type {ClientStatus}\n     */\n    this.status = null;\n\n    this.attachHandlers();\n  }\n\n  /**\n   * Attaches event handlers to the WebSocket\n   * @private\n   */\n  attachHandlers() {\n    let socket = this.socket;\n\n    socket.on('message', (data, flags) => this.PreEventMessage(data, flags));\n    socket.on('close', (code, message) => this.EventClose(code, message));\n    socket.on('error', (error) => this.EventError(error));\n  }\n\n  /**\n   * Removes all message, close and error event listeners.\n   */\n  detachHandlers() {\n    let socket = this.socket;\n\n    socket.removeAllListeners('message');\n    socket.removeAllListeners('close');\n    socket.removeAllListeners('error');\n  }\n\n  /**\n   * Handles the WebSocket 'message' event and normalizes data\n   * @param {String|Buffer} data The received data.\n   * @param {Object} flags Object containing 'binary' member.\n   */\n  PreEventMessage(data, flags) {\n\n    // turn data into string\n\n    if (flags.binary) {\n      try {\n        // try to inflate the data\n        data = zlib.inflateSync(data).toString();\n      } catch (e) {\n        return this.EventError(Constants.Errors.INVALID_MESSAGE_FROM_CLIENT);\n      }\n    }\n\n    // parse json data\n    try {\n      data = JSON.parse(data);\n    } catch (e) {\n      return this.EventError(Constants.Errors.INVALID_MESSAGE_FROM_CLIENT);\n    }\n\n    if (!data.t) {\n      return this.EventError(Constants.Errors.INVALID_MESSAGE_FROM_CLIENT);\n    }\n\n    // data is now a valid packet\n\n    this.EventMessage(data);\n  }\n\n  /**\n   * Handles normalized data from 'PreEventMessage'\n   * @param {Object} packet The received packet\n   * @abstract\n   */\n  EventMessage(packet) {\n\n  }\n\n  /**\n   * Handles the WebSocket 'close' event\n   * @param {Number} code The close code\n   * @param {String} message The given close message\n   */\n  EventClose(code, message) {\n\n  }\n\n  /**\n   * Handles the WebSocket 'error' event\n   * @param {Error} error An error\n   */\n  EventError(error) {\n\n  }\n\n  /**\n   * Sends a custom packet to the Client\n   * @param {String} type packet type\n   * @param {Object} data packet data\n   */\n  send(type, data) {\n    type = 'custom_' + type;\n    return this.sendInternal(type, data);\n  }\n\n  /**\n   * Sends an unmodified packet to the Client\n   * @param {String} type packet type\n   * @param {Object} data packet data\n   */\n  sendInternal(type, data) {\n    let t = type;\n    let d = data || {};\n    this.socket.send(JSON.stringify({ t, d }));\n  }\n\n  /**\n   * Kills connection to the client\n   * @param {Number} reason A numeric reason, see DisconnectTypes.\n   * @param  {Boolean} [returnAllowed=true] States whether the Client is allowed to return to their session\n   * after being disconnected.\n   * @param {Object} [extra] Extra information about the disconnect, useful for custom disconnect reasons.\n   */\n  killConnection(reason, returnAllowed=true, extra) {\n    let data = {\n      r: reason,\n    };\n\n    if (extra) {\n      data.e = extra;\n    }\n\n    if (this.authorized) {\n      data.returnAllowed = Boolean(returnAllowed);\n    }\n\n    this.sendInternal(Constants.PacketTypes.SERVER_DISCONNECTING_CLIENT, data);\n\n    if (data.returnAllowed) {\n      this.cleanWebSocket();\n    } else {\n      this.cleanWebSocket();\n      this.removeReferences();\n    }\n  }\n\n  /**\n   * Terminates the WebSocket and cleans all WebSocket related information, but doesn't end the session.\n   * @ignore\n   */\n  cleanWebSocket() {\n    this.socket.close();\n\n    for (let interval of this.intervals) {\n      clearInterval(interval);\n    }\n\n    for (let timeout of this.timeouts) {\n      clearTimeout(timeout);\n    }\n  }\n\n  /**\n   * Removes references to the Client internally\n   * @ignore\n   */\n  removeReferences() {\n    let index = this.wss.connections.indexOf(this);\n    if (index > -1) {\n      this.wss.connections.splice(index, 1);\n    }\n  }\n}\n\nexport default Client;\n"
+  },
+  {
+    "__docId__": 66,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "Client",
+    "memberof": "server/structures/Client.js",
+    "longname": "server/structures/Client.js~Client",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/structures/Client.js",
+    "importStyle": "Client",
+    "description": "Represents a WebSocket Client.",
+    "lineNumber": 9,
+    "interface": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#constructor",
+    "access": null,
+    "description": "Creates a new Client. Developers shouldn't instantiate Client,\nthe WebSocketServer does it automatically.",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "ws.WebSocket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": "the WebSocket connection"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "LucidWebSocketServer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "wss",
+        "description": "the WSS the Client is connected to."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 68,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "wss",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#wss",
+    "access": null,
+    "description": "The LucidWebSocketServer that the Client is connected to.",
+    "lineNumber": 22,
+    "type": {
+      "nullable": null,
+      "types": [
+        "LucidWebSocketServer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "socket",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#socket",
+    "access": null,
+    "description": "The WebSocket connection of the Client.",
+    "lineNumber": 28,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ws.WebSocket"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "authorized",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#authorized",
+    "access": null,
+    "description": "Represents whether the Client is authorized or not.",
+    "lineNumber": 34,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "intervals",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#intervals",
+    "access": null,
+    "description": "An Array of Intervals. They are stored so they can be cleared if required.",
+    "lineNumber": 40,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array<Interval>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "timeouts",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#timeouts",
+    "access": null,
+    "description": "An Array of Timeouts. They are stored so they can be cleared if required.",
+    "lineNumber": 46,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array<Timeout>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "status",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#status",
+    "access": null,
+    "description": "The status of the Client.",
+    "lineNumber": 52,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ClientStatus"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "attachHandlers",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#attachHandlers",
+    "access": "private",
+    "description": "Attaches event handlers to the WebSocket",
+    "lineNumber": 61,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "detachHandlers",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#detachHandlers",
+    "access": null,
+    "description": "Removes all message, close and error event listeners.",
+    "lineNumber": 72,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "PreEventMessage",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#PreEventMessage",
+    "access": null,
+    "description": "Handles the WebSocket 'message' event and normalizes data",
+    "lineNumber": 85,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String",
+          "Buffer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "The received data."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "flags",
+        "description": "Object containing 'binary' member."
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "EventMessage",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#EventMessage",
+    "access": null,
+    "description": "Handles normalized data from 'PreEventMessage'",
+    "lineNumber": 119,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "packet",
+        "description": "The received packet"
+      }
+    ],
+    "abstract": true,
+    "generator": false
+  },
+  {
+    "__docId__": 78,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "EventClose",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#EventClose",
+    "access": null,
+    "description": "Handles the WebSocket 'close' event",
+    "lineNumber": 128,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "code",
+        "description": "The close code"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "message",
+        "description": "The given close message"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 79,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "EventError",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#EventError",
+    "access": null,
+    "description": "Handles the WebSocket 'error' event",
+    "lineNumber": 136,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Error"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "An error"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 80,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "send",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#send",
+    "access": null,
+    "description": "Sends a custom packet to the Client",
+    "lineNumber": 145,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "packet type"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "packet data"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 81,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "sendInternal",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#sendInternal",
+    "access": null,
+    "description": "Sends an unmodified packet to the Client",
+    "lineNumber": 155,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "packet type"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "packet data"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 82,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "killConnection",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#killConnection",
+    "access": null,
+    "description": "Kills connection to the client",
+    "lineNumber": 168,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "reason",
+        "description": "A numeric reason, see DisconnectTypes."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "true",
+        "defaultRaw": true,
+        "name": "returnAllowed",
+        "description": "States whether the Client is allowed to return to their session\nafter being disconnected."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "extra",
+        "description": "Extra information about the disconnect, useful for custom disconnect reasons."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 83,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "cleanWebSocket",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#cleanWebSocket",
+    "access": null,
+    "description": "Terminates the WebSocket and cleans all WebSocket related information, but doesn't end the session.",
+    "lineNumber": 195,
+    "ignore": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 84,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "removeReferences",
+    "memberof": "server/structures/Client.js~Client",
+    "longname": "server/structures/Client.js~Client#removeReferences",
+    "access": null,
+    "description": "Removes references to the Client internally",
+    "lineNumber": 211,
+    "ignore": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 85,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/structures/UnknownClient.js",
+    "memberof": null,
+    "longname": "server/structures/UnknownClient.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nimport Client from './Client';\nimport {PacketTypes, DisconnectTypes, ClientStatus} from '../constants/Constants';\n\n/**\n * Represents a WebSocket Client that has connected, but has not authorised/authorized yet.\n */\nclass UnknownClient extends Client{\n\n  /**\n   * Creates a new UnknownClient. Developers shouldn't instantiate UnknownClient,\n   * the WebSocketServer does it automatically.\n   * @param {ws.WebSocket} socket the WebSocket connection\n   * @param {LucidWebSocketServer} wss the WSS the Client is connected to.\n   */\n  constructor(socket, wss) {\n    super(socket, wss);\n\n    /**\n     * @ignore\n     */\n    this.status = ClientStatus.UNAUTHORIZED;\n\n    this._passedAuth = false;\n\n    setTimeout(() => this.checkAuth(), this.wss.lucidServer.options.wss.allowedAuthTime);\n  }\n\n  /**\n   * Checks whether or not the Client has been authenticated. If it hasn't, it is disconnected.\n   */\n  checkAuth() {\n    if (!this._passedAuth) {\n      return this.killConnection(DisconnectTypes.TOOK_TOO_LONG_TO_AUTH);\n    }\n  }\n\n  /**\n   * Handles packet events\n   * @param {Object} packet the received packet\n   */\n  EventMessage(packet) {\n    super.EventMessage(packet);\n    switch (packet.t){\n      case PacketTypes.CLIENT_NEW_SESSION_REQUEST:\n\n        // takes no data\n        if (this.wss.canAllowNewConnections) {\n          // can take a new connection\n          this._passedAuth = true;\n          this.wss.AuthorizeNewSession(this);\n\n        } else {\n          // can't take any more connections\n          return this.killConnection(DisconnectTypes.SERVER_AT_MAXIMUM_CAPACITY);\n        }\n\n        break;\n      case PacketTypes.CLIENT_EXISTING_SESSION_REQUEST:\n        break;\n    }\n  }\n\n  /**\n   * Breaks down the unknown client, removing listeners.\n   */\n  breakDown() {\n    this.detachHandlers();\n  }\n}\n\nexport default UnknownClient;\n"
+  },
+  {
+    "__docId__": 86,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "UnknownClient",
+    "memberof": "server/structures/UnknownClient.js",
+    "longname": "server/structures/UnknownClient.js~UnknownClient",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/structures/UnknownClient.js",
+    "importStyle": "UnknownClient",
+    "description": "Represents a WebSocket Client that has connected, but has not authorised/authorized yet.",
+    "lineNumber": 9,
+    "interface": false,
+    "extends": [
+      "server/structures/Client.js~Client"
+    ]
+  },
+  {
+    "__docId__": 87,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "server/structures/UnknownClient.js~UnknownClient",
+    "longname": "server/structures/UnknownClient.js~UnknownClient#constructor",
+    "access": null,
+    "description": "Creates a new UnknownClient. Developers shouldn't instantiate UnknownClient,\nthe WebSocketServer does it automatically.",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "ws.WebSocket"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "socket",
+        "description": "the WebSocket connection"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "LucidWebSocketServer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "wss",
+        "description": "the WSS the Client is connected to."
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "status",
+    "memberof": "server/structures/UnknownClient.js~UnknownClient",
+    "longname": "server/structures/UnknownClient.js~UnknownClient#status",
+    "access": null,
+    "description": "",
+    "lineNumber": 23,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "_passedAuth",
+    "memberof": "server/structures/UnknownClient.js~UnknownClient",
+    "longname": "server/structures/UnknownClient.js~UnknownClient#_passedAuth",
+    "access": null,
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "checkAuth",
+    "memberof": "server/structures/UnknownClient.js~UnknownClient",
+    "longname": "server/structures/UnknownClient.js~UnknownClient#checkAuth",
+    "access": null,
+    "description": "Checks whether or not the Client has been authenticated. If it hasn't, it is disconnected.",
+    "lineNumber": 33,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 91,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "EventMessage",
+    "memberof": "server/structures/UnknownClient.js~UnknownClient",
+    "longname": "server/structures/UnknownClient.js~UnknownClient#EventMessage",
+    "access": null,
+    "description": "Handles packet events",
+    "lineNumber": 43,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "packet",
+        "description": "the received packet"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 92,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "_passedAuth",
+    "memberof": "server/structures/UnknownClient.js~UnknownClient",
+    "longname": "server/structures/UnknownClient.js~UnknownClient#_passedAuth",
+    "access": null,
+    "description": null,
+    "lineNumber": 51,
+    "undocument": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "breakDown",
+    "memberof": "server/structures/UnknownClient.js~UnknownClient",
+    "longname": "server/structures/UnknownClient.js~UnknownClient#breakDown",
+    "access": null,
+    "description": "Breaks down the unknown client, removing listeners.",
+    "lineNumber": 68,
+    "params": [],
+    "generator": false
+  },
+  {
+    "__docId__": 94,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/test/test.js",
+    "memberof": null,
+    "longname": "server/test/test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nimport * as Lucid from '../../';\nimport http from 'http';\nimport WebSocket from 'ws';\n\n/**\n * @ignore\n */\nconst lucid = new Lucid.Server.LucidServer();\n\n/**\n * @ignore\n */\nconst server = http.createServer();\n\nlucid.attach(server);\n\nserver.listen(25543);\n\n/**\n * @ignore\n */\nconst h = new WebSocket('ws://localhost:25543/ws');\n\nh.onopen = e => {\n\n};\n\nh.onmessage = e => {\n  console.log(e.data);\n};\n"
+  },
+  {
+    "__docId__": 95,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "lucid",
+    "memberof": "server/test/test.js",
+    "longname": "server/test/test.js~lucid",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/test/test.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "server",
+    "memberof": "server/test/test.js",
+    "longname": "server/test/test.js~server",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/test/test.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "h",
+    "memberof": "server/test/test.js",
+    "longname": "server/test/test.js~h",
+    "access": null,
+    "export": false,
+    "importPath": "lucid/server/test/test.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 24,
+    "ignore": true,
+    "type": {
+      "types": [
+        "ws~WebSocket"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "server/util/Util.js",
+    "memberof": null,
+    "longname": "server/util/Util.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\n/**\n * Merge a nested default options object with a custom object.\n * @param {Object} def default object\n * @param {Object} custom custom object to fill in missing properties with values from the default object.\n * @ignore\n */\nexport const Options = function merge(def, given) {\n  if (!given)\n  return def;\n\n  given = given || {};\n\n  for (let key in def) {\n    if (!given.hasOwnProperty(key)) {\n      given[key] = def[key];\n    }else if (given[key] === Object(given[key])) {\n      given[key] = merge(def[key], given[key]);\n    }\n  }\n\n  return given;\n};\n"
+  },
+  {
+    "__docId__": 99,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "Options",
+    "memberof": "server/util/Util.js",
+    "longname": "server/util/Util.js~Options",
+    "access": null,
+    "export": true,
+    "importPath": "lucid/server/util/Util.js",
+    "importStyle": "{Options}",
+    "description": "Merge a nested default options object with a custom object.",
+    "lineNumber": 9,
+    "ignore": true,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "def",
+        "description": "default object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "custom",
+        "description": "custom object to fill in missing properties with values from the default object."
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 116,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 120,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 123,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 124,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 125,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 126,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 127,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 128,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 129,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 130,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 131,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 132,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 133,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 134,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 135,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 136,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 137,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 138,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 139,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 140,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 141,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 142,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 143,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 144,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 145,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 146,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 147,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 149,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 150,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 151,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 152,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 153,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 154,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 155,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 156,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  }
+]

@@ -1,0 +1,2524 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "PacketConstants",
+            "range": [
+              12,
+              27
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 12
+              },
+              "end": {
+                "line": 1,
+                "column": 27
+              }
+            }
+          },
+          "range": [
+            7,
+            27
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 7
+            },
+            "end": {
+              "line": 1,
+              "column": 27
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./packets/Packets",
+        "raw": "'./packets/Packets'",
+        "range": [
+          33,
+          52
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 33
+          },
+          "end": {
+            "line": 1,
+            "column": 52
+          }
+        }
+      },
+      "range": [
+        0,
+        53
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 53
+        }
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportNamespaceSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "ErrorConstants",
+            "range": [
+              66,
+              80
+            ],
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 12
+              },
+              "end": {
+                "line": 2,
+                "column": 26
+              }
+            }
+          },
+          "range": [
+            61,
+            80
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 7
+            },
+            "end": {
+              "line": 2,
+              "column": 26
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./errors/Errors",
+        "raw": "'./errors/Errors'",
+        "range": [
+          86,
+          103
+        ],
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 32
+          },
+          "end": {
+            "line": 2,
+            "column": 49
+          }
+        }
+      },
+      "range": [
+        54,
+        104
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 50
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The Lucid Protocol version that the server and client are running.\n * @type {String}\n ",
+          "range": [
+            106,
+            201
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "ProtocolVersion",
+              "range": [
+                215,
+                230
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 13
+                },
+                "end": {
+                  "line": 8,
+                  "column": 28
+                }
+              }
+            },
+            "init": {
+              "type": "Literal",
+              "value": "alpha-experimental-1",
+              "raw": "'alpha-experimental-1'",
+              "range": [
+                233,
+                255
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 31
+                },
+                "end": {
+                  "line": 8,
+                  "column": 53
+                }
+              }
+            },
+            "range": [
+              215,
+              255
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 13
+              },
+              "end": {
+                "line": 8,
+                "column": 53
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          209,
+          256
+        ],
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 7
+          },
+          "end": {
+            "line": 8,
+            "column": 54
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * The Lucid Protocol version that the server and client are running.\n * @type {String}\n ",
+            "range": [
+              106,
+              201
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 7,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Describes the state of the Server.\n * @type {Object}\n * @property {Number} AVAILABLE Shows that the server is ready/available.\n * @property {Number} UNAVAILABLE Shows that the server is unavailable and is not attempting to start/restart.\n * @property {Number} RESTARTING Shows that the server is unavailable but is trying to restart.\n * @property {Number} STARTING Shows that the server is starting up for the first time.\n ",
+            "range": [
+              258,
+              690
+            ],
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 0
+              },
+              "end": {
+                "line": 17,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        202,
+        256
+      ],
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 54
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The Lucid Protocol version that the server and client are running.\n * @type {String}\n ",
+          "range": [
+            106,
+            201
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Describes the state of the Server.\n * @type {Object}\n * @property {Number} AVAILABLE Shows that the server is ready/available.\n * @property {Number} UNAVAILABLE Shows that the server is unavailable and is not attempting to start/restart.\n * @property {Number} RESTARTING Shows that the server is unavailable but is trying to restart.\n * @property {Number} STARTING Shows that the server is starting up for the first time.\n ",
+          "range": [
+            258,
+            690
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 17,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "ServerStatus",
+              "range": [
+                704,
+                716
+              ],
+              "loc": {
+                "start": {
+                  "line": 18,
+                  "column": 13
+                },
+                "end": {
+                  "line": 18,
+                  "column": 25
+                }
+              }
+            },
+            "init": {
+              "type": "ObjectExpression",
+              "properties": [
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "AVAILABLE",
+                    "range": [
+                      723,
+                      732
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 11
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 0,
+                    "raw": "0",
+                    "range": [
+                      734,
+                      735
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 14
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    723,
+                    735
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 19,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 19,
+                      "column": 14
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "UNAVAILABLE",
+                    "range": [
+                      739,
+                      750
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 20,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 20,
+                        "column": 13
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 1,
+                    "raw": "1",
+                    "range": [
+                      752,
+                      753
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 20,
+                        "column": 15
+                      },
+                      "end": {
+                        "line": 20,
+                        "column": 16
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    739,
+                    753
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 20,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 20,
+                      "column": 16
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "RESTARTING",
+                    "range": [
+                      757,
+                      767
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 21,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 21,
+                        "column": 12
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 2,
+                    "raw": "2",
+                    "range": [
+                      769,
+                      770
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 21,
+                        "column": 14
+                      },
+                      "end": {
+                        "line": 21,
+                        "column": 15
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    757,
+                    770
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 21,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 21,
+                      "column": 15
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "STARTING",
+                    "range": [
+                      774,
+                      782
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 22,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 10
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 3,
+                    "raw": "3",
+                    "range": [
+                      784,
+                      785
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 22,
+                        "column": 12
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 13
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    774,
+                    785
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 22,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 13
+                    }
+                  }
+                }
+              ],
+              "range": [
+                719,
+                788
+              ],
+              "loc": {
+                "start": {
+                  "line": 18,
+                  "column": 28
+                },
+                "end": {
+                  "line": 23,
+                  "column": 1
+                }
+              }
+            },
+            "range": [
+              704,
+              788
+            ],
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 13
+              },
+              "end": {
+                "line": 23,
+                "column": 1
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          698,
+          789
+        ],
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 7
+          },
+          "end": {
+            "line": 23,
+            "column": 2
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Describes the state of the Server.\n * @type {Object}\n * @property {Number} AVAILABLE Shows that the server is ready/available.\n * @property {Number} UNAVAILABLE Shows that the server is unavailable and is not attempting to start/restart.\n * @property {Number} RESTARTING Shows that the server is unavailable but is trying to restart.\n * @property {Number} STARTING Shows that the server is starting up for the first time.\n ",
+            "range": [
+              258,
+              690
+            ],
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 0
+              },
+              "end": {
+                "line": 17,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Describes the state of a Client.\n * @type {Object}\n * @property {Number} ACTIVE Shows that the Client is active - it is connected.\n * @property {Number} INACTIVE Shows that the Client is inactive - it is disconnected, but has the chance\n * to renew its session. Clients may be inactive when their connection has dropped.\n * @property {Number} REMOVED Shows that the Client is disconnected and they are not permitted to return to their\n * session.\n * @property {Number} UNAUTHORIZED Shows that the Client is unauthorized. Only applies to UnknownClient.\n ",
+            "range": [
+              791,
+              1353
+            ],
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 0
+              },
+              "end": {
+                "line": 34,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        691,
+        789
+      ],
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 2
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Describes the state of the Server.\n * @type {Object}\n * @property {Number} AVAILABLE Shows that the server is ready/available.\n * @property {Number} UNAVAILABLE Shows that the server is unavailable and is not attempting to start/restart.\n * @property {Number} RESTARTING Shows that the server is unavailable but is trying to restart.\n * @property {Number} STARTING Shows that the server is starting up for the first time.\n ",
+          "range": [
+            258,
+            690
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 17,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Describes the state of a Client.\n * @type {Object}\n * @property {Number} ACTIVE Shows that the Client is active - it is connected.\n * @property {Number} INACTIVE Shows that the Client is inactive - it is disconnected, but has the chance\n * to renew its session. Clients may be inactive when their connection has dropped.\n * @property {Number} REMOVED Shows that the Client is disconnected and they are not permitted to return to their\n * session.\n * @property {Number} UNAUTHORIZED Shows that the Client is unauthorized. Only applies to UnknownClient.\n ",
+          "range": [
+            791,
+            1353
+          ],
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 0
+            },
+            "end": {
+              "line": 34,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "ClientStatus",
+              "range": [
+                1367,
+                1379
+              ],
+              "loc": {
+                "start": {
+                  "line": 35,
+                  "column": 13
+                },
+                "end": {
+                  "line": 35,
+                  "column": 25
+                }
+              }
+            },
+            "init": {
+              "type": "ObjectExpression",
+              "properties": [
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "ACTIVE",
+                    "range": [
+                      1386,
+                      1392
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 36,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 36,
+                        "column": 8
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 0,
+                    "raw": "0",
+                    "range": [
+                      1394,
+                      1395
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 36,
+                        "column": 10
+                      },
+                      "end": {
+                        "line": 36,
+                        "column": 11
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1386,
+                    1395
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 36,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 36,
+                      "column": 11
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "INACTIVE",
+                    "range": [
+                      1399,
+                      1407
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 37,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 37,
+                        "column": 10
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 1,
+                    "raw": "1",
+                    "range": [
+                      1409,
+                      1410
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 37,
+                        "column": 12
+                      },
+                      "end": {
+                        "line": 37,
+                        "column": 13
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1399,
+                    1410
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 37,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 37,
+                      "column": 13
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "REMOVED",
+                    "range": [
+                      1414,
+                      1421
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 38,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 38,
+                        "column": 9
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 2,
+                    "raw": "2",
+                    "range": [
+                      1423,
+                      1424
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 38,
+                        "column": 11
+                      },
+                      "end": {
+                        "line": 38,
+                        "column": 12
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1414,
+                    1424
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 38,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 38,
+                      "column": 12
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "UNAUTHORIZED",
+                    "range": [
+                      1428,
+                      1440
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 39,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 39,
+                        "column": 14
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 3,
+                    "raw": "3",
+                    "range": [
+                      1442,
+                      1443
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 39,
+                        "column": 16
+                      },
+                      "end": {
+                        "line": 39,
+                        "column": 17
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1428,
+                    1443
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 39,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 39,
+                      "column": 17
+                    }
+                  }
+                }
+              ],
+              "range": [
+                1382,
+                1446
+              ],
+              "loc": {
+                "start": {
+                  "line": 35,
+                  "column": 28
+                },
+                "end": {
+                  "line": 40,
+                  "column": 1
+                }
+              }
+            },
+            "range": [
+              1367,
+              1446
+            ],
+            "loc": {
+              "start": {
+                "line": 35,
+                "column": 13
+              },
+              "end": {
+                "line": 40,
+                "column": 1
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          1361,
+          1447
+        ],
+        "loc": {
+          "start": {
+            "line": 35,
+            "column": 7
+          },
+          "end": {
+            "line": 40,
+            "column": 2
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Describes the state of a Client.\n * @type {Object}\n * @property {Number} ACTIVE Shows that the Client is active - it is connected.\n * @property {Number} INACTIVE Shows that the Client is inactive - it is disconnected, but has the chance\n * to renew its session. Clients may be inactive when their connection has dropped.\n * @property {Number} REMOVED Shows that the Client is disconnected and they are not permitted to return to their\n * session.\n * @property {Number} UNAUTHORIZED Shows that the Client is unauthorized. Only applies to UnknownClient.\n ",
+            "range": [
+              791,
+              1353
+            ],
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 0
+              },
+              "end": {
+                "line": 34,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Default options for a Server's setup.\n * @type {ServerOptions}\n ",
+            "range": [
+              1449,
+              1522
+            ],
+            "loc": {
+              "start": {
+                "line": 42,
+                "column": 0
+              },
+              "end": {
+                "line": 45,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        1354,
+        1447
+      ],
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 0
+        },
+        "end": {
+          "line": 40,
+          "column": 2
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Describes the state of a Client.\n * @type {Object}\n * @property {Number} ACTIVE Shows that the Client is active - it is connected.\n * @property {Number} INACTIVE Shows that the Client is inactive - it is disconnected, but has the chance\n * to renew its session. Clients may be inactive when their connection has dropped.\n * @property {Number} REMOVED Shows that the Client is disconnected and they are not permitted to return to their\n * session.\n * @property {Number} UNAUTHORIZED Shows that the Client is unauthorized. Only applies to UnknownClient.\n ",
+          "range": [
+            791,
+            1353
+          ],
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 0
+            },
+            "end": {
+              "line": 34,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Default options for a Server's setup.\n * @type {ServerOptions}\n ",
+          "range": [
+            1449,
+            1522
+          ],
+          "loc": {
+            "start": {
+              "line": 42,
+              "column": 0
+            },
+            "end": {
+              "line": 45,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "ServerDefaultOptions",
+              "range": [
+                1536,
+                1556
+              ],
+              "loc": {
+                "start": {
+                  "line": 46,
+                  "column": 13
+                },
+                "end": {
+                  "line": 46,
+                  "column": 33
+                }
+              }
+            },
+            "init": {
+              "type": "ObjectExpression",
+              "properties": [
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "wss",
+                    "range": [
+                      1563,
+                      1566
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 47,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 47,
+                        "column": 5
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "allowedAuthTime",
+                          "range": [
+                            1574,
+                            1589
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 48,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 48,
+                              "column": 19
+                            }
+                          }
+                        },
+                        "value": {
+                          "type": "Literal",
+                          "value": 1000,
+                          "raw": "1000",
+                          "range": [
+                            1591,
+                            1595
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 48,
+                              "column": 21
+                            },
+                            "end": {
+                              "line": 48,
+                              "column": 25
+                            }
+                          }
+                        },
+                        "kind": "init",
+                        "method": false,
+                        "shorthand": false,
+                        "computed": false,
+                        "range": [
+                          1574,
+                          1595
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 48,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 48,
+                            "column": 25
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      1568,
+                      1600
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 47,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 49,
+                        "column": 3
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1563,
+                    1600
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 47,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 49,
+                      "column": 3
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "express",
+                    "range": [
+                      1604,
+                      1611
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 50,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 50,
+                        "column": 9
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "ObjectExpression",
+                    "properties": [],
+                    "range": [
+                      1613,
+                      1615
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 50,
+                        "column": 11
+                      },
+                      "end": {
+                        "line": 50,
+                        "column": 13
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1604,
+                    1615
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 50,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 50,
+                      "column": 13
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "mount",
+                    "range": [
+                      1619,
+                      1624
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 51,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 51,
+                        "column": 7
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": "/",
+                    "raw": "'/'",
+                    "range": [
+                      1626,
+                      1629
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 51,
+                        "column": 9
+                      },
+                      "end": {
+                        "line": 51,
+                        "column": 12
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1619,
+                    1629
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 51,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 51,
+                      "column": 12
+                    }
+                  }
+                },
+                {
+                  "type": "Property",
+                  "key": {
+                    "type": "Identifier",
+                    "name": "maxClients",
+                    "range": [
+                      1633,
+                      1643
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 52,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 52,
+                        "column": 12
+                      }
+                    }
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "value": 25,
+                    "raw": "25",
+                    "range": [
+                      1645,
+                      1647
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 52,
+                        "column": 14
+                      },
+                      "end": {
+                        "line": 52,
+                        "column": 16
+                      }
+                    }
+                  },
+                  "kind": "init",
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "range": [
+                    1633,
+                    1647
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 52,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 52,
+                      "column": 16
+                    }
+                  }
+                }
+              ],
+              "range": [
+                1559,
+                1650
+              ],
+              "loc": {
+                "start": {
+                  "line": 46,
+                  "column": 36
+                },
+                "end": {
+                  "line": 53,
+                  "column": 1
+                }
+              }
+            },
+            "range": [
+              1536,
+              1650
+            ],
+            "loc": {
+              "start": {
+                "line": 46,
+                "column": 13
+              },
+              "end": {
+                "line": 53,
+                "column": 1
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          1530,
+          1651
+        ],
+        "loc": {
+          "start": {
+            "line": 46,
+            "column": 7
+          },
+          "end": {
+            "line": 53,
+            "column": 2
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Default options for a Server's setup.\n * @type {ServerOptions}\n ",
+            "range": [
+              1449,
+              1522
+            ],
+            "loc": {
+              "start": {
+                "line": 42,
+                "column": 0
+              },
+              "end": {
+                "line": 45,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "\n\n PACKETS\n\n ",
+            "range": [
+              1653,
+              1670
+            ],
+            "loc": {
+              "start": {
+                "line": 55,
+                "column": 0
+              },
+              "end": {
+                "line": 59,
+                "column": 3
+              }
+            }
+          },
+          {
+            "type": "Block",
+            "value": "*\n * Object containing Packet Types\n * @type {Object}\n ",
+            "range": [
+              1671,
+              1730
+            ],
+            "loc": {
+              "start": {
+                "line": 60,
+                "column": 0
+              },
+              "end": {
+                "line": 63,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        1523,
+        1651
+      ],
+      "loc": {
+        "start": {
+          "line": 46,
+          "column": 0
+        },
+        "end": {
+          "line": 53,
+          "column": 2
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Default options for a Server's setup.\n * @type {ServerOptions}\n ",
+          "range": [
+            1449,
+            1522
+          ],
+          "loc": {
+            "start": {
+              "line": 42,
+              "column": 0
+            },
+            "end": {
+              "line": 45,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "\n\n PACKETS\n\n ",
+          "range": [
+            1653,
+            1670
+          ],
+          "loc": {
+            "start": {
+              "line": 55,
+              "column": 0
+            },
+            "end": {
+              "line": 59,
+              "column": 3
+            }
+          }
+        },
+        {
+          "type": "Block",
+          "value": "*\n * Object containing Packet Types\n * @type {Object}\n ",
+          "range": [
+            1671,
+            1730
+          ],
+          "loc": {
+            "start": {
+              "line": 60,
+              "column": 0
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "PacketTypes",
+              "range": [
+                1744,
+                1755
+              ],
+              "loc": {
+                "start": {
+                  "line": 64,
+                  "column": 13
+                },
+                "end": {
+                  "line": 64,
+                  "column": 24
+                }
+              }
+            },
+            "init": {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "Identifier",
+                "name": "PacketConstants",
+                "range": [
+                  1758,
+                  1773
+                ],
+                "loc": {
+                  "start": {
+                    "line": 64,
+                    "column": 27
+                  },
+                  "end": {
+                    "line": 64,
+                    "column": 42
+                  }
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "PacketType",
+                "range": [
+                  1774,
+                  1784
+                ],
+                "loc": {
+                  "start": {
+                    "line": 64,
+                    "column": 43
+                  },
+                  "end": {
+                    "line": 64,
+                    "column": 53
+                  }
+                }
+              },
+              "range": [
+                1758,
+                1784
+              ],
+              "loc": {
+                "start": {
+                  "line": 64,
+                  "column": 27
+                },
+                "end": {
+                  "line": 64,
+                  "column": 53
+                }
+              }
+            },
+            "range": [
+              1744,
+              1784
+            ],
+            "loc": {
+              "start": {
+                "line": 64,
+                "column": 13
+              },
+              "end": {
+                "line": 64,
+                "column": 53
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          1738,
+          1785
+        ],
+        "loc": {
+          "start": {
+            "line": 64,
+            "column": 7
+          },
+          "end": {
+            "line": 64,
+            "column": 54
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "\n\n PACKETS\n\n ",
+            "range": [
+              1653,
+              1670
+            ],
+            "loc": {
+              "start": {
+                "line": 55,
+                "column": 0
+              },
+              "end": {
+                "line": 59,
+                "column": 3
+              }
+            }
+          },
+          {
+            "type": "Block",
+            "value": "*\n * Object containing Packet Types\n * @type {Object}\n ",
+            "range": [
+              1671,
+              1730
+            ],
+            "loc": {
+              "start": {
+                "line": 60,
+                "column": 0
+              },
+              "end": {
+                "line": 63,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Object containing Disconnect Packet Types\n * @type {Object}\n ",
+            "range": [
+              1787,
+              1857
+            ],
+            "loc": {
+              "start": {
+                "line": 66,
+                "column": 0
+              },
+              "end": {
+                "line": 69,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        1731,
+        1785
+      ],
+      "loc": {
+        "start": {
+          "line": 64,
+          "column": 0
+        },
+        "end": {
+          "line": 64,
+          "column": 54
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "\n\n PACKETS\n\n ",
+          "range": [
+            1653,
+            1670
+          ],
+          "loc": {
+            "start": {
+              "line": 55,
+              "column": 0
+            },
+            "end": {
+              "line": 59,
+              "column": 3
+            }
+          }
+        },
+        {
+          "type": "Block",
+          "value": "*\n * Object containing Packet Types\n * @type {Object}\n ",
+          "range": [
+            1671,
+            1730
+          ],
+          "loc": {
+            "start": {
+              "line": 60,
+              "column": 0
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Object containing Disconnect Packet Types\n * @type {Object}\n ",
+          "range": [
+            1787,
+            1857
+          ],
+          "loc": {
+            "start": {
+              "line": 66,
+              "column": 0
+            },
+            "end": {
+              "line": 69,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "DisconnectTypes",
+              "range": [
+                1871,
+                1886
+              ],
+              "loc": {
+                "start": {
+                  "line": 70,
+                  "column": 13
+                },
+                "end": {
+                  "line": 70,
+                  "column": 28
+                }
+              }
+            },
+            "init": {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "Identifier",
+                "name": "PacketConstants",
+                "range": [
+                  1889,
+                  1904
+                ],
+                "loc": {
+                  "start": {
+                    "line": 70,
+                    "column": 31
+                  },
+                  "end": {
+                    "line": 70,
+                    "column": 46
+                  }
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "DisconnectPacketType",
+                "range": [
+                  1905,
+                  1925
+                ],
+                "loc": {
+                  "start": {
+                    "line": 70,
+                    "column": 47
+                  },
+                  "end": {
+                    "line": 70,
+                    "column": 67
+                  }
+                }
+              },
+              "range": [
+                1889,
+                1925
+              ],
+              "loc": {
+                "start": {
+                  "line": 70,
+                  "column": 31
+                },
+                "end": {
+                  "line": 70,
+                  "column": 67
+                }
+              }
+            },
+            "range": [
+              1871,
+              1925
+            ],
+            "loc": {
+              "start": {
+                "line": 70,
+                "column": 13
+              },
+              "end": {
+                "line": 70,
+                "column": 67
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          1865,
+          1926
+        ],
+        "loc": {
+          "start": {
+            "line": 70,
+            "column": 7
+          },
+          "end": {
+            "line": 70,
+            "column": 68
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Object containing Disconnect Packet Types\n * @type {Object}\n ",
+            "range": [
+              1787,
+              1857
+            ],
+            "loc": {
+              "start": {
+                "line": 66,
+                "column": 0
+              },
+              "end": {
+                "line": 69,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "\n\n ERRORS\n\n ",
+            "range": [
+              1928,
+              1944
+            ],
+            "loc": {
+              "start": {
+                "line": 72,
+                "column": 0
+              },
+              "end": {
+                "line": 76,
+                "column": 3
+              }
+            }
+          },
+          {
+            "type": "Block",
+            "value": "*\n * Object containing Error Types\n * @type {Object}\n ",
+            "range": [
+              1945,
+              2003
+            ],
+            "loc": {
+              "start": {
+                "line": 77,
+                "column": 0
+              },
+              "end": {
+                "line": 80,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        1858,
+        1926
+      ],
+      "loc": {
+        "start": {
+          "line": 70,
+          "column": 0
+        },
+        "end": {
+          "line": 70,
+          "column": 68
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Object containing Disconnect Packet Types\n * @type {Object}\n ",
+          "range": [
+            1787,
+            1857
+          ],
+          "loc": {
+            "start": {
+              "line": 66,
+              "column": 0
+            },
+            "end": {
+              "line": 69,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "\n\n ERRORS\n\n ",
+          "range": [
+            1928,
+            1944
+          ],
+          "loc": {
+            "start": {
+              "line": 72,
+              "column": 0
+            },
+            "end": {
+              "line": 76,
+              "column": 3
+            }
+          }
+        },
+        {
+          "type": "Block",
+          "value": "*\n * Object containing Error Types\n * @type {Object}\n ",
+          "range": [
+            1945,
+            2003
+          ],
+          "loc": {
+            "start": {
+              "line": 77,
+              "column": 0
+            },
+            "end": {
+              "line": 80,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "Errors",
+              "range": [
+                2017,
+                2023
+              ],
+              "loc": {
+                "start": {
+                  "line": 81,
+                  "column": 13
+                },
+                "end": {
+                  "line": 81,
+                  "column": 19
+                }
+              }
+            },
+            "init": {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "Identifier",
+                "name": "ErrorConstants",
+                "range": [
+                  2026,
+                  2040
+                ],
+                "loc": {
+                  "start": {
+                    "line": 81,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 81,
+                    "column": 36
+                  }
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "Errors",
+                "range": [
+                  2041,
+                  2047
+                ],
+                "loc": {
+                  "start": {
+                    "line": 81,
+                    "column": 37
+                  },
+                  "end": {
+                    "line": 81,
+                    "column": 43
+                  }
+                }
+              },
+              "range": [
+                2026,
+                2047
+              ],
+              "loc": {
+                "start": {
+                  "line": 81,
+                  "column": 22
+                },
+                "end": {
+                  "line": 81,
+                  "column": 43
+                }
+              }
+            },
+            "range": [
+              2017,
+              2047
+            ],
+            "loc": {
+              "start": {
+                "line": 81,
+                "column": 13
+              },
+              "end": {
+                "line": 81,
+                "column": 43
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          2011,
+          2048
+        ],
+        "loc": {
+          "start": {
+            "line": 81,
+            "column": 7
+          },
+          "end": {
+            "line": 81,
+            "column": 44
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "\n\n ERRORS\n\n ",
+            "range": [
+              1928,
+              1944
+            ],
+            "loc": {
+              "start": {
+                "line": 72,
+                "column": 0
+              },
+              "end": {
+                "line": 76,
+                "column": 3
+              }
+            }
+          },
+          {
+            "type": "Block",
+            "value": "*\n * Object containing Error Types\n * @type {Object}\n ",
+            "range": [
+              1945,
+              2003
+            ],
+            "loc": {
+              "start": {
+                "line": 77,
+                "column": 0
+              },
+              "end": {
+                "line": 80,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        2004,
+        2048
+      ],
+      "loc": {
+        "start": {
+          "line": 81,
+          "column": 0
+        },
+        "end": {
+          "line": 81,
+          "column": 44
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "\n\n ERRORS\n\n ",
+          "range": [
+            1928,
+            1944
+          ],
+          "loc": {
+            "start": {
+              "line": 72,
+              "column": 0
+            },
+            "end": {
+              "line": 76,
+              "column": 3
+            }
+          }
+        },
+        {
+          "type": "Block",
+          "value": "*\n * Object containing Error Types\n * @type {Object}\n ",
+          "range": [
+            1945,
+            2003
+          ],
+          "loc": {
+            "start": {
+              "line": 77,
+              "column": 0
+            },
+            "end": {
+              "line": 80,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    2048
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 81,
+      "column": 44
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * The Lucid Protocol version that the server and client are running.\n * @type {String}\n ",
+      "range": [
+        106,
+        201
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Describes the state of the Server.\n * @type {Object}\n * @property {Number} AVAILABLE Shows that the server is ready/available.\n * @property {Number} UNAVAILABLE Shows that the server is unavailable and is not attempting to start/restart.\n * @property {Number} RESTARTING Shows that the server is unavailable but is trying to restart.\n * @property {Number} STARTING Shows that the server is starting up for the first time.\n ",
+      "range": [
+        258,
+        690
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 17,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Describes the state of a Client.\n * @type {Object}\n * @property {Number} ACTIVE Shows that the Client is active - it is connected.\n * @property {Number} INACTIVE Shows that the Client is inactive - it is disconnected, but has the chance\n * to renew its session. Clients may be inactive when their connection has dropped.\n * @property {Number} REMOVED Shows that the Client is disconnected and they are not permitted to return to their\n * session.\n * @property {Number} UNAUTHORIZED Shows that the Client is unauthorized. Only applies to UnknownClient.\n ",
+      "range": [
+        791,
+        1353
+      ],
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 0
+        },
+        "end": {
+          "line": 34,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Default options for a Server's setup.\n * @type {ServerOptions}\n ",
+      "range": [
+        1449,
+        1522
+      ],
+      "loc": {
+        "start": {
+          "line": 42,
+          "column": 0
+        },
+        "end": {
+          "line": 45,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "\n\n PACKETS\n\n ",
+      "range": [
+        1653,
+        1670
+      ],
+      "loc": {
+        "start": {
+          "line": 55,
+          "column": 0
+        },
+        "end": {
+          "line": 59,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Object containing Packet Types\n * @type {Object}\n ",
+      "range": [
+        1671,
+        1730
+      ],
+      "loc": {
+        "start": {
+          "line": 60,
+          "column": 0
+        },
+        "end": {
+          "line": 63,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Object containing Disconnect Packet Types\n * @type {Object}\n ",
+      "range": [
+        1787,
+        1857
+      ],
+      "loc": {
+        "start": {
+          "line": 66,
+          "column": 0
+        },
+        "end": {
+          "line": 69,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "\n\n ERRORS\n\n ",
+      "range": [
+        1928,
+        1944
+      ],
+      "loc": {
+        "start": {
+          "line": 72,
+          "column": 0
+        },
+        "end": {
+          "line": 76,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Object containing Error Types\n * @type {Object}\n ",
+      "range": [
+        1945,
+        2003
+      ],
+      "loc": {
+        "start": {
+          "line": 77,
+          "column": 0
+        },
+        "end": {
+          "line": 80,
+          "column": 3
+        }
+      }
+    }
+  ]
+}

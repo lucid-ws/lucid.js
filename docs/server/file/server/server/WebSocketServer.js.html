@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">server/server/WebSocketServer.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/lucid-ws/lucid.js" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">constants</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ClientStatus">ClientStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DisconnectTypes">DisconnectTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Errors">Errors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PacketTypes">PacketTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ProtocolVersion">ProtocolVersion</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ServerDefaultOptions">ServerDefaultOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ServerStatus">ServerStatus</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">constants/errors</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-INVALID_MESSAGE_FROM_CLIENT">INVALID_MESSAGE_FROM_CLIENT</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">constants/packets</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CLIENT_EXISTING_SESSION_REQUEST">CLIENT_EXISTING_SESSION_REQUEST</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CLIENT_NEW_SESSION_REQUEST">CLIENT_NEW_SESSION_REQUEST</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SERVER_ACCEPT_SESSION_REQUEST">SERVER_ACCEPT_SESSION_REQUEST</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SERVER_AT_MAXIMUM_CAPACITY">SERVER_AT_MAXIMUM_CAPACITY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SERVER_DISCONNECTING_CLIENT">SERVER_DISCONNECTING_CLIENT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TOOK_TOO_LONG_TO_AUTH">TOOK_TOO_LONG_TO_AUTH</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">server</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/server/server/ExpressServer.js~LucidExpressServer.html">LucidExpressServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/server/server/Server.js~LucidServer.html">LucidServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/server/server/WebSocketServer.js~LucidWebSocketServer.html">LucidWebSocketServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ExpressServerOptions">ExpressServerOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ServerOptions">ServerOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-WebSocketServerOptions">WebSocketServerOptions</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">structures</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/server/structures/AuthorizedClient.js~AuthorizedClient.html">AuthorizedClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/server/structures/Client.js~Client.html">Client</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/server/structures/UnknownClient.js~UnknownClient.html">UnknownClient</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">server/server/WebSocketServer.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+
+import crypto from &apos;crypto&apos;;
+import AuthorizedClient from &apos;../structures/AuthorizedClient&apos;;
+import UnknownClient from &apos;../structures/UnknownClient&apos;;
+import * as Constants from &apos;../constants/Constants&apos;;
+
+/**
+* Object containing options for LucidWebSocketServer
+* @typedef {(object)} WebSocketServerOptions
+* @property {Number} [hearbeat=45000] Interval of heartbeats in milliseconds. Set to -1 to disable heartbeats.
+* Heartbeats are used to verify whether connections are active.
+* @property {Number} [allowedAuthTime=5000] Maximum time in milliseconds that a client has to request authentication
+* before it is disconnected.
+*/
+
+import {Server} from &apos;ws&apos;;
+
+/**
+ * The WebSocketServer handles WebSocket connections and sessions
+ */
+class LucidWebSocketServer{
+  /**
+   * Creates a new WebSocketServer. Developers shouldn&apos;t instantiate this class themselves, it is done by LucidServer.
+   * @param  {LucidServer} lucidServer The LucidServer that the WebSocketServer is running under.
+   */
+  constructor(lucidServer) {
+
+    /**
+     * Lucid Server that the ExpressServer is serving under.
+     * @type {LucidServer}
+     */
+    this.lucidServer = lucidServer;
+    /**
+     * Options for the WebSocketServer, obtained from the owning Server&apos;s options.
+     * @type {WebSocketServerOptions}
+     */
+    this.options = lucidServer.options.wss;
+
+    /**
+     * The WebSocket Server that the LucidWebSocketServer class wraps around.
+     * @type {ws.Server}
+     */
+    this.wss = null;
+
+    /**
+     * An Array of Authorized Clients.
+     * @type {Array&lt;AuthorizedClient&gt;}
+     */
+    this.connections = [];
+
+  }
+
+  /**
+   * Attaches a HTTP Server, essentially starting the WebSocket Server.
+   * @param  {http.Server} httpServer The HTTP Server to attach.
+   * @private
+   */
+  attach(httpServer) {
+
+    // the mount point that the WS server should build upon
+    let baseMount = this.lucidServer.options.mount;
+
+    this.wss = new Server({ server: httpServer, path: baseMount + &apos;ws&apos;, });
+
+    this.attachHandlers();
+
+  }
+
+  /**
+   * Describes whether the server has the capacity to take any new connections.
+   * @return {Boolean} Returns true if there is capacity for a new connection.
+   */
+  get canAllowNewConnections() {
+    return this.connections.length &lt; this.lucidServer.options.maxClients;
+  }
+
+  /**
+   * Attach WSS Handlers
+   * @private
+   */
+  attachHandlers() {
+    this.wss.on(&apos;connection&apos;, (socket) =&gt; this.EventConnection(socket));
+    this.wss.on(&apos;error&apos;, (error) =&gt; this.EventError(error));
+    this.wss.on(&apos;headers&apos;, (headers) =&gt; this.EventHeaders(headers));
+  }
+
+  /**
+   * Handles WebSocketServer &apos;connection&apos; events
+   * @param {ws.WebSocket} socket
+   * @private
+   */
+  EventConnection(socket) {
+    let unknownClient = new UnknownClient(socket, this);
+  }
+
+  /**
+   * Handles WebSocketServer &apos;error&apos; events
+   * @param {Error} error
+   * @private
+   */
+  EventError(error) {
+
+  }
+
+  /**
+   * Handles WebSocketServer &apos;headers&apos; events
+   * @param {Object} headers
+   * @private
+   */
+  EventHeaders(headers) {
+
+  }
+
+  /**
+   * Authorizes a previously &quot;unknown&quot; client with a new session.
+   * @param {UnknownClient} unknownClient Client to authorize
+   */
+  AuthorizeNewSession(unknownClient) {
+    let uuid = crypto.randomBytes(16).toString(&apos;hex&apos;);
+    let token = crypto.randomBytes(64).toString(&apos;base64&apos;);
+
+    unknownClient.breakDown();
+
+    let authorizedClient = new AuthorizedClient(
+      unknownClient.socket, // socket
+      this, // wss
+      uuid, // uuid
+      token // token
+    );
+
+    let packetData = { uuid, token };
+    let heartbeat = this.lucidServer.options.wss.hearbeat;
+
+    if (this.lucidServer.options.hearbeat &gt; -1) {
+      packetData.heartbeatInterval = heartbeat;
+    }
+
+    authorizedClient.sendInternal(Constants.PacketTypes.SERVER_ACCEPT_SESSION_REQUEST, packetData);
+
+    this.connections.push(authorizedClient);
+  }
+};
+
+export default LucidWebSocketServer;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
